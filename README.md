@@ -1,49 +1,57 @@
 # kedge-wx
 
-kedge-wx is a lightweight, capsule-native WebAssembly runtime written entirely in Rust.  
-Built from scratch, it powers the execution of trust-aware, signed `.kapsule` logic in decentralized, offline-first, and edge-computing environments.
+**kedge-wx** is a lightweight WebAssembly interpreter written entirely in Rust.
+Designed for offline, peer-to-peer, and resource-constrained environments, it enables verifiable execution of WASM logic without relying on cloud or centralized infrastructure.
 
-It is part of the Kriyo platform — a local-first ecosystem for commerce, communities, and autonomy.
-
----
-
-## Features
-
-- Pure Rust implementation with no external dependencies, compatible with iOS, Android, CLI, and embedded systems.
-- Capsule-aware execution designed specifically for running WASM logic inside cryptographically signed `.kapsule` files.
-- Supports a minimal subset of the WASM MVP instruction set including integer arithmetic and control flow.
-- Fully deterministic and interpretable runtime without JIT, designed for simplicity, verifiability, and auditability.
-- Optimized for edge environments with constrained memory, limited connectivity, and peer-to-peer synchronization.
-- Extensible hostcall interface for executing custom functions like `log`, `get_metadata`, or `trust_eval`.
+It is intended to power decentralized applications within the **d-verse** ecosystem — where execution happens locally, and logic remains portable.
 
 ---
 
-## Use Cases
+## ✦ Features
 
-- Executing embedded logic in `.kapsule` files such as ranking, trust evaluation, or moderation.
-- Running autonomous agents and validators in decentralized, offline mesh apps.
-- Applying region-specific policy logic within federated systems.
-- Enabling mobile-first applications that operate independently of centralized cloud services.
-
----
-
-## Getting Started
-
-To use `kedge-wx`, clone the repository, build it with Cargo, and run it against a compiled WebAssembly file.
-
-You will need a valid `.wasm` file compiled from a trusted source using the `wasm32-unknown-unknown` target. This file should implement a simple capsule logic function, for example, a mathematical operation or policy evaluation routine.
+* Pure Rust implementation with no external dependencies
+* Compatible with iOS, Android, embedded systems, and command-line interfaces
+* Supports a minimal, auditable subset of the WASM MVP spec: integer arithmetic, control flow, and linear memory
+* Fully deterministic interpreter (no JIT) for verifiability and consistency
+* Extensible hostcall interface (e.g., `log`, `get_metadata`, `eval_trust`)
+* Optimized for edge use cases with low memory, limited bandwidth, and intermittent connectivity
 
 ---
 
-## License
+## 🚀 Use Cases
 
-kedge-wx is released under the MIT license, © 2024 Kriyaetive Verse.  
-It is developed to support local-first software, decentralized trust systems, and digital independence.
+* Executing local logic in mesh-connected or offline-first applications
+* Embedding WASM routines inside decentralized or autonomous agents
+* Applying region-specific rules in federated systems
+* Serving as the execution layer for `dverse-runtime` in future releases
 
 ---
 
-## Part of the Kriyo Capsule Framework
+## 🛠 Getting Started
 
-kedge-wx is a foundational component of the Kriyo architecture. It enables portable, verifiable execution of user-defined logic through signed capsules. This allows Kriyo to support systems for local commerce, regional governance, autonomous collaboration, and peer-to-peer knowledge sharing — without relying on centralized infrastructure.
+To run a simple WebAssembly module with `kedge-wx`:
 
-For more information, visit kriyaetive.com
+```bash
+cargo build --release
+./target/release/kedge-wx examples/simple.wasm
+```
+
+Use Rust to compile a WASM binary with:
+
+```rust
+#[no_mangle]
+pub extern "C" fn add(a: i32, b: i32) -> i32 {
+    a + b
+}
+```
+
+```bash
+rustc --target=wasm32-unknown-unknown -O add.rs
+```
+
+---
+
+## 📄 License
+
+MIT © 2024 D-Verse Project
+kedge-wx is developed to support local execution, digital autonomy, and decentralized logic.
