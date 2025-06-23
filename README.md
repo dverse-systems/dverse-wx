@@ -1,42 +1,42 @@
-# kedge-wx
+# dverse-wx
 
-**kedge-wx** is a lightweight WebAssembly interpreter written entirely in Rust.
-Designed for offline, peer-to-peer, and resource-constrained environments, it enables verifiable execution of WASM logic without relying on cloud or centralized infrastructure.
+**dverse-wx** is a lightweight WebAssembly interpreter written entirely in Rust.
+Built for local-first and peer-to-peer environments, it enables deterministic execution of WASM logic on mobile, embedded, and offline systems — without relying on centralized infrastructure.
 
-It is intended to power decentralized applications within the **d-verse** ecosystem — where execution happens locally, and logic remains portable.
+It is a foundational component in the **d-verse** stack, designed to power verifiable logic at the edge.
 
 ---
 
 ## ✦ Features
 
 * Pure Rust implementation with no external dependencies
-* Compatible with iOS, Android, embedded systems, and command-line interfaces
-* Supports a minimal, auditable subset of the WASM MVP spec: integer arithmetic, control flow, and linear memory
-* Fully deterministic interpreter (no JIT) for verifiability and consistency
-* Extensible hostcall interface (e.g., `log`, `get_metadata`, `eval_trust`)
-* Optimized for edge use cases with low memory, limited bandwidth, and intermittent connectivity
+* Runs on iOS, Android, embedded platforms, and CLI environments
+* Supports a minimal subset of the WASM MVP spec: integer operations, control flow, linear memory
+* Fully deterministic interpreter (no JIT), enabling transparent and auditable behavior
+* Extensible hostcall system for logic like `log`, `get_metadata`, and `evaluate`
+* Optimized for edge computing: small footprint, low memory, works offline
 
 ---
 
 ## 🚀 Use Cases
 
-* Executing local logic in mesh-connected or offline-first applications
-* Embedding WASM routines inside decentralized or autonomous agents
-* Applying region-specific rules in federated systems
-* Serving as the execution layer for `dverse-runtime` in future releases
+* Running embedded WASM logic in decentralized, mobile, or offline-first apps
+* Executing autonomous routines in trust-aware peer-to-peer environments
+* Supporting local decision-making, moderation, or policy enforcement
+* Serving as the low-level engine for `dverse-runtime` in future releases
 
 ---
 
 ## 🛠 Getting Started
 
-To run a simple WebAssembly module with `kedge-wx`:
+To build and run a WASM file with `dverse-wx`:
 
-```bash
+```sh
 cargo build --release
-./target/release/kedge-wx examples/simple.wasm
+./target/release/dverse-wx examples/add.wasm
 ```
 
-Use Rust to compile a WASM binary with:
+Example source (compiled with `wasm32-unknown-unknown`):
 
 ```rust
 #[no_mangle]
@@ -45,7 +45,7 @@ pub extern "C" fn add(a: i32, b: i32) -> i32 {
 }
 ```
 
-```bash
+```sh
 rustc --target=wasm32-unknown-unknown -O add.rs
 ```
 
@@ -54,4 +54,4 @@ rustc --target=wasm32-unknown-unknown -O add.rs
 ## 📄 License
 
 MIT © 2024 D-Verse Project
-kedge-wx is developed to support local execution, digital autonomy, and decentralized logic.
+`dverse-wx` is developed to support local-first software, decentralized logic, and digital autonomy.
