@@ -5,7 +5,6 @@ Built for local-first and peer-to-peer environments, it enables deterministic ex
 
 It is a foundational component in the **d-verse** stack, designed to power verifiable logic at the edge.
 
----
 
 ## Features
 
@@ -16,7 +15,6 @@ It is a foundational component in the **d-verse** stack, designed to power verif
 * Extensible hostcall system for logic like `log`, `get_metadata`, and `evaluate`
 * Optimized for edge computing: small footprint, low memory, works offline
 
----
 
 ## Use Cases
 
@@ -25,7 +23,6 @@ It is a foundational component in the **d-verse** stack, designed to power verif
 * Supporting local decision-making, moderation, or policy enforcement
 * Serving as the low-level engine for `dverse-runtime` in future releases
 
----
 
 ## Getting Started
 
@@ -49,7 +46,6 @@ pub extern "C" fn add(a: i32, b: i32) -> i32 {
 rustc --target=wasm32-unknown-unknown -O add.rs
 ```
 
----
 
 ## License
 
