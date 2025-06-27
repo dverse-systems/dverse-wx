@@ -7,7 +7,7 @@ It is a foundational component in the **d-verse** stack, designed to power verif
 
 ---
 
-## ✦ Features
+## Features
 
 * Pure Rust implementation with no external dependencies
 * Runs on iOS, Android, embedded platforms, and CLI environments
@@ -18,7 +18,7 @@ It is a foundational component in the **d-verse** stack, designed to power verif
 
 ---
 
-## 🚀 Use Cases
+## Use Cases
 
 * Running embedded WASM logic in decentralized, mobile, or offline-first apps
 * Executing autonomous routines in trust-aware peer-to-peer environments
@@ -27,7 +27,7 @@ It is a foundational component in the **d-verse** stack, designed to power verif
 
 ---
 
-## 🛠 Getting Started
+## Getting Started
 
 To build and run a WASM file with `dverse-wx`:
 
@@ -51,7 +51,7 @@ rustc --target=wasm32-unknown-unknown -O add.rs
 
 ---
 
-## 📄 License
+## License
 
 MIT © 2024 D-Verse Project
 `dverse-wx` is developed to support local-first software, decentralized logic, and digital autonomy.
